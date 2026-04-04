@@ -1,0 +1,419 @@
+.light-green-bg {
+  background: #e8f9e5 !important;
+}
+/* Make all country flag icons on the map larger */
+img[alt$="flag"] {
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "NunitoSans";
+  src: url("/fonts/NunitoSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NunitoSans";
+  src: url("/fonts/NunitoSans-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NunitoSans";
+  src: url("/fonts/NunitoSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NunitoSans";
+  src: url("/fonts/NunitoSans-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "NunitoSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, li, button, input, textarea, select, label, small, strong, em {
+  font-family: "NunitoSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+/* .fw-bold {
+  font-weight: 700 !important;
+} */
+.fw-bolder {
+  font-weight: 700 !important;
+}
+
+/* ── HERO ── */
+/* .hero-bg {
+  background: linear-gradient(135deg, #154d46 0%, #13674f 25%, #22b840 60%, #82e8a6 100%);
+  width: 100%;
+  height: auto;
+  position: relative;
+} */
+ .hero-bg {
+  background: linear-gradient(135deg, #154d46 0%, #13674f 25%, #22b840 60%, #82e8a6 100%);
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-bg img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+.hero-font {
+  font-family: "NunitoSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.hero-subtitle {
+  font-size: 14px;
+}
+.hero-title {
+  font-size: 2.8rem;
+}
+.hero-description {
+  font-size: 14px;
+}
+.btn-hero {
+  font-size: 14px;
+}
+/* .hero-bg {
+  background: linear-gradient(135deg, #154d46 0%, #13674f 25%, #22b840 60%, #82e8a6 100%);
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(80,220,80,.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: 20%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(0,180,0,.12) 0%, transparent 65%);
+  pointer-events: none;
+} */
+
+/* Dashboard card */
+.dash-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.28), 0 8px 20px rgba(0,0,0,.15);
+  overflow: hidden;
+}
+
+/* ── STATS SECTION ── */
+.stats-bg {
+  background: linear-gradient(135deg, #154d46 0%, #13674f 25%, #22b840 60%, #82e8a6 100%);
+}
+.stats-bar {
+  background: rgba(0,0,0,.35);
+  border-radius: 14px;
+}
+.globe-wrap {
+  width: 100%;
+  max-width: 600px;
+  height: 450px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.globe-wrap canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+.globe-label {
+  padding: 3px 7px;
+  border-radius: 4px;
+  background: rgba(0,0,0,0.7);
+  font-size: 11px;
+  font-weight: 600;
+  color: #ffa726;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  white-space: nowrap;
+  border: 1px solid rgba(255,167,38,0.3);
+}
+@media (max-width: 768px) {
+  .globe-wrap {
+    height: 320px;
+  }
+}
+/* Logo marquee */
+.logo-marquee {
+  overflow: hidden;
+}
+.logo-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 24px;
+  animation: logo-marquee 100s linear infinite;
+}
+.logo-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+  white-space: nowrap;
+}
+@keyframes logo-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* World map pins */
+.pin {
+  position: absolute;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.3);
+  cursor: pointer;
+  transition: transform .2s;
+}
+.pin:hover { transform: scale(1.2); }
+
+/* ── FEATURES ── */
+.feature-card {
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 20px 14px;
+  text-align: center;
+  transition: box-shadow .2s, transform .2s;
+  background: #fff;
+}
+.feature-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,.1);
+  transform: translateY(-3px);
+}
+
+/* ── SOLUTIONS ── */
+.solutions-bg {
+  background: linear-gradient(135deg, #1a5c1a 0%, #2d8a2d 50%, #3cb33c 100%);
+}
+.modules-bg {
+  background: linear-gradient(135deg, #154d46 0%, #13674f 25%, #22b840 60%, #82e8a6 100%);
+}
+.tab-pill {
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .2s;
+  color: rgba(255,255,255,.75);
+  background: transparent;
+  border: none;
+}
+.tab-pill.active {
+  background: #fff;
+  color: #1a7a1a;
+  font-weight: 700;
+}
+.tab-pill:hover:not(.active) { color: #fff; background: rgba(255,255,255,.15); }
+
+/* ── PRICING ── */
+.plan-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 28px 22px;
+  transition: box-shadow .2s, transform .2s;
+  background: #fff;
+}
+/* Gradient background for pricing cards */
+.pricing-gradient {
+  background: linear-gradient(135deg, #154d46 0%, #13674f 25%, #22b840 60%, #82e8a6 100%) !important;
+}
+.plan-card:hover {
+  box-shadow: 0 12px 32px rgba(0,0,0,.12);
+  transform: translateY(-4px);
+}
+.plan-feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 13px;
+  color: #444;
+}
+.plan-arrow { color: #3c9b3c; font-weight: 700; }
+
+/* ── VALUES ── */
+.values-bg {
+  background: linear-gradient(160deg, rgba(0,0,0,.55), rgba(30,90,30,.7)),
+              url("data:image/svg+xml,%3Csvg width='1440' height='400' viewBox='0 0 1440 400' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='1440' height='400' fill='%23228b22'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+}
+
+/* ── TESTIMONIALS ── */
+.testi-card {
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 12px;
+  padding: 24px;
+  backdrop-filter: blur(4px);
+  position: relative;
+}
+.testi-card::before {
+  content: '"';
+  position: absolute;
+  top: -10px; left: 18px;
+  font-size: 60px;
+  color: rgba(255,255,255,.25);
+  font-family: inherit;
+  line-height: 1;
+}
+.testi-bg {
+  background: linear-gradient(135deg, #1a5c1a 0%, #2d8a2d 50%, #3cb33c 100%);
+}
+
+/* ── FOOTER ── */
+.footer-bg { background: #fff; }
+
+/* ── NAVBAR ── */
+.nav-dropdown-arrow {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 10px;
+}
+
+/* Float animation for dashboard */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.float { animation: float 4s ease-in-out infinite; }
+
+/* Dot carousel */
+.dot { width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,.4); cursor:pointer; transition:.2s; }
+.dot.active { background:#fff; }
+
+/* Scroll reveal */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(30px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.fade-up { animation: fadeUp .6s ease both; }
+
+/* Home page scroll reveal with staggered delay */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(34px) scale(0.985);
+  filter: blur(2px);
+  transition:
+    opacity 720ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 720ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 720ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform, filter;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-scroll-left {
+  animation: scrollLeft 25s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scrollRight 25s linear infinite;
+}
+
+/* section {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+} */
+
+/* Fade edges sirf logos section ke liye */
+.fade-edges {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* globals.css */
+
+/* Hero animations */
+@keyframes heroSlideIn {
+  from { opacity: 1; transform: translate3d(30%, 0, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes heroSlideOut {
+  from { opacity: 1; transform: translate3d(0, 0, 0); }
+  to { opacity: 1; transform: translate3d(-30%, 0, 0); }
+}
+.hero-slide-in { animation: heroSlideIn 850ms cubic-bezier(0.25,0.46,0.45,0.94) forwards; }
+.hero-slide-out { animation: heroSlideOut 850ms cubic-bezier(0.25,0.46,0.45,0.94) forwards; }
+
+/* Remove mask globally */
+/* section {
+  mask-image: none !important;
+} */
+/* Apply fade only to logos marquee */
+.logo-marquee.fade-edges {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.fade-edges {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent) !important;
+}
