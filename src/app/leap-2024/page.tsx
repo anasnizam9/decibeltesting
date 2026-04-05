@@ -11,7 +11,7 @@ export default function Leap2024Page() {
     const targetDate = new Date("2024-03-04T00:00:00");
     const interval = setInterval(() => {
       const now = new Date();
-      const diff = targetDate - now;
+      const diff = targetDate.getTime() - now.getTime();
       if (diff <= 0) {
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
         clearInterval(interval);
