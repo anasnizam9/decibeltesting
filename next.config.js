@@ -1,8 +1,4 @@
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {};
-// module.exports = nextConfig;
-
-//** @type {import('next').NextConfig} */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
   basePath: '/decibeltesting',
@@ -16,4 +12,4 @@ const nextConfig = {
     ],
   },
 };
-export default nextConfig;
+module.exports = nextConfig;
