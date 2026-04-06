@@ -411,8 +411,7 @@ function Slide1() {
   );
 }
 
-function DarkSlide({ headline, body, cta, visual }) {
-  return (
+function DarkSlide({ headline, body, cta, visual }: any) {  return (
     <div
       style={{
         width: "100%",
